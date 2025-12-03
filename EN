@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dehyltom Almeida · Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio with Cyclistic case study (Excel, R, Tableau)."/>
+  <style>
+    :root { --bg:#0b0c10; --card:#121317; --muted:#9aa0a6; --text:#e8eaed; --accent:#7dd3fc; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:56px;height:56px;border-radius:50%;background:#222;display:inline-block}
+    h1{font-size:28px;margin:0;line-height:1.2}
+    .muted{color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .tag{font-size:12px;padding:6px 10px;border:1px solid #2a2e36;border-radius:999px;color:#cbd5e1}
+    .grid{display:grid;gap:18px;grid-template-columns:1fr}
+    @media(min-width:900px){.grid{grid-template-columns:1.3fr 1fr}}
+    .card{background:var(--card);border:1px solid #1f232b;border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+    h2{margin:6px 0 8px;font-size:22px} h3{margin:14px 0 8px;font-size:18px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .kpi{background:#0f1116;border:1px solid #1b1f28;border-radius:14px;padding:12px}
+    .kpi b{font-size:20px;display:block}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid #2b3340;background:#0f1116;color:#e5e7eb}
+    .btn:hover{background:#111827}
+    .langs{display:flex;gap:8px;align-items:center}
+    .iframe-wrap{aspect-ratio:16/9;width:100%;background:#0f1116;border:1px solid #1b1f28;border-radius:14px;overflow:hidden}
+    iframe{width:100%;height:100%;border:0}
+    .tiny{font-size:12px}
+    footer{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="avatar"></span>
+        <div>
+          <h1>Dehyltom Almeida<span class="muted"> · Data Analyst</span></h1>
+          <div class="tags"><span class="tag">Excel</span><span class="tag">R</span><span class="tag">Tableau</span></div>
+        </div>
+      </div>
+      <nav class="langs">
+        <a class="btn" href="index-pt.html">PT</a>
+        <a class="btn" href="index-es.html">ES</a>
+        <a class="btn" href="https://github.com/dehyltom19" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/dehyltom-almeida-ab0770aa/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Case Study · Cyclistic</h2>
+        <p>How members and casual riders use the bike-share differently and which marketing actions can increase conversions to annual plans.</p>
+        <div class="kpis">
+          <div class="kpi"><span class="muted tiny">Period</span><b>Q1 2019–2020</b></div>
+          <div class="kpi"><span class="muted tiny">Tools</span><b>Excel · R · Tableau</b></div>
+          <div class="kpi"><span class="muted tiny">Focus</span><b>Behavior & Conversion</b></div>
+        </div>
+
+        <h3>Key findings</h3>
+        <ul>
+          <li>Members concentrate on weekdays (commute pattern); casual riders are stronger on weekends.</li>
+          <li>Casual rides are longer on average; members’ trips are shorter and more consistent.</li>
+          <li>Peaks: members 7–9 & 16–18; casual late morning/afternoon.</li>
+        </ul>
+
+        <h3>Recommendations</h3>
+        <ul>
+          <li>Weekend pass → annual upgrade with progressive discount for repeat casuals.</li>
+          <li>In-app/kiosk prompts in high-casual stations showing value of the annual plan after N rides/month.</li>
+          <li>Commute-value campaign near transit hubs during 7–9 and 16–18.</li>
+        </ul>
+
+        <p><a class="btn" href="https://public.tableau.com/app/profile/dehyltom.pereira.gomes.almeida/viz/CasestudyCyclistic_17645967501630/Story1" target="_blank" rel="noopener">View Story on Tableau</a></p>
+      </article>
+
+      <aside class="card">
+        <h3>Tableau</h3>
+        <div class="iframe-wrap">
+          <iframe title="Cyclistic Story" src="https://public.tableau.com/views/CasestudyCyclistic_17645967501630/Story1?:showVizHome=no"></iframe>
+        </div>
+        <p class="tiny muted">If the embed fails, use the button above.</p>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>Methodology</h2>
+      <ul>
+        <li><b>Data:</b> Q1/2019 & Q1/2020; prep in Excel (standardization, <code>ride_length_min</code>, <code>day_of_week</code>, <code>start_hour</code>, <code>month</code>).</li>
+        <li><b>Cleaning:</b> remove rides &lt;1 min and &gt;24h; drop missing times.</li>
+        <li><b>Analysis:</b> KPIs, weekday/hour volume, avg duration by weekday, top stations, and 2020 <code>rideable_type</code>.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:dannybailey1909@gmail.com">dannybailey1909@gmail.com</a> · 🔗 <a href="https://www.linkedin.com/in/dehyltom-almeida-ab0770aa/" target="_blank">LinkedIn</a> · 🧰 <a href="https://github.com/dehyltom19" target="_blank">GitHub</a></p>
+    </section>
+
+    <footer>
+      <span class="muted tiny">© <span id="y"></span> Dehyltom Almeida</span>
+      <a class="btn" href="#top">Back to top</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
